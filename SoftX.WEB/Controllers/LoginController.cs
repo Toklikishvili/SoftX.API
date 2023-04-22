@@ -17,10 +17,10 @@ public class LoginController : Controller
         {
             string apiUrl = "https://localhost:7050/api/v1/user/login";
 
-            var response = await client.PostAsJsonAsync(apiUrl, new { Email = txtLoginEmail, Password = txtLoginPassword.HashPassword()});
+            var response = await client.PostAsJsonAsync(apiUrl, new { Email = txtLoginEmail, Password = txtLoginPassword.HashPassword() });
 
             var apiResponse = await response.Content.ReadAsStringAsync();
-
+            //Todo: დასამთავრებელია
             return Json(apiResponse);
         }
     }
